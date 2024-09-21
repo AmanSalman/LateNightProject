@@ -1,7 +1,7 @@
 # LateNightProject
 
 ## Description
-LateNightProject is a fun and spontaneous web application created to showcase a filterable product list. It was developed in two phases: 
+LateNightProject is a web application that displays a filterable product list. It was developed in two phases:
 - **Phase 1**: A functional web page built with HTML, CSS, and JavaScript.
 - **Phase 2**: Converted into a React application to enhance interactivity and maintainability.
 
