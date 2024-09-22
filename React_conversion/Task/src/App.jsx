@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import ProductList from './ProductList';
 import './App.css';
+import FilterButtons from './FilterButtons';
 
 const products = [
   { name: "Laptop", category: "Electronics", price: 999 },
@@ -25,20 +26,25 @@ function App() {
     : products.filter(product => product.category === category);
 
   return (
-    <div className="App">
-      <h1>Product List</h1>
-      <div id="filter-buttons">
-        {["All", "Electronics", "Clothing", "Home"].map(cat => (
-          <button key={cat} className="filter-btn" onClick={() => handleFilterChange(cat)}>
-            {cat}
-          </button>
-        ))}
-      </div>
-      <ProductList products={filteredProducts} />
-      <footer>
-        Made with 💖 by <a href="https://www.linkedin.com/in/AmanSalman/" target="_blank" rel="noopener noreferrer"> Aman Salman</a>
-      </footer>
+    <>
+      <div className="container">
+      <aside className="sidebar">
+        <h2>Categories</h2>
+        <FilterButtons activeCategory={category} onFilterChange={handleFilterChange} />
+      </aside>
+      <main>
+        <h1>Product List</h1>
+        <div id="product-list">
+          <ProductList products={filteredProducts} />
+        </div>
+
+      </main>        
     </div>
+    <footer>
+    Made with 💖 by <a href="https://www.linkedin.com/in/AmanSalman/" target="_blank" rel="noopener noreferrer">Aman Salman</a>
+  </footer>
+    </>
+  
   );
 }
 
